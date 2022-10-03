@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { OutlineButton } from "../components/button/Button";
 
 import HeroSlide from "../components/hero-slide/HeroSlide";
+import MovieList from "../components/movie-list/MovieList";
+
+import { category, movieType, tvType } from "../api/tmdbApi";
 
 const Home = () => {
   return (
@@ -16,6 +19,7 @@ const Home = () => {
               <OutlineButton className="small">View more</OutlineButton>
             </Link>
           </div>
+          <MovieList category={category.movie} type={movieType.popular} />
         </div>
       </div>
     </div>
