@@ -1,6 +1,7 @@
 import "./welcome.scss";
 
 import HomeSection from "../HomeSection";
+import Button from "../../button/Button";
 
 import {
   bg1,
@@ -34,8 +35,8 @@ const Welcome = (props) => {
             and content creators who are waiting for you to join them.
           </div>
           <div className="btns m-t-4">
-            <button>PLAY NOW</button>
-            <button>GET STARTED</button>
+            <Button className="btn-main">PLAY NOW</Button>
+            <Button className="btn-second">GET STARTED</Button>
           </div>
         </div>
       </div>
