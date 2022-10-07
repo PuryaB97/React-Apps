@@ -4,6 +4,8 @@ import SwiperCore, { EffectFade, Mousewheel, Pagination } from "swiper";
 
 SwiperCore.use([Mousewheel, Pagination, EffectFade]);
 
+import { Welcome } from "../components/home-section";
+
 const swiperOptions = {
   direction: "vertical",
   slidesPerView: 1,
@@ -17,8 +19,10 @@ const swiperOptions = {
 const Home = () => {
   return (
     <>
-      <Swiper>
-        <SwiperSlide>1</SwiperSlide>
+      <Swiper {...swiperOptions}>
+        <SwiperSlide>
+          {({ isActive }) => <Welcome isActive={isActive} />}
+        </SwiperSlide>
         <SwiperSlide>2</SwiperSlide>
       </Swiper>
     </>

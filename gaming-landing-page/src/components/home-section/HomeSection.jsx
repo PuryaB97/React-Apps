@@ -1,6 +1,6 @@
 import Section, { SectionContent } from "../section/Section";
 
-const HomeSection = () => {
+const HomeSection = (props) => {
   return (
     <Section className={props.className}>
       <SectionContent
