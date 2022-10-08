@@ -4,7 +4,7 @@ import SwiperCore, { EffectFade, Mousewheel, Pagination } from "swiper";
 
 SwiperCore.use([Mousewheel, Pagination, EffectFade]);
 
-import { Welcome } from "../components/home-section";
+import { Welcome, Champion } from "../components/home-section";
 
 const swiperOptions = {
   direction: "vertical",
@@ -23,7 +23,9 @@ const Home = () => {
         <SwiperSlide>
           {({ isActive }) => <Welcome isActive={isActive} />}
         </SwiperSlide>
-        <SwiperSlide>2</SwiperSlide>
+        <SwiperSlide>
+          {({ isActive }) => <Champion isActive={isActive} />}
+        </SwiperSlide>
       </Swiper>
     </>
   );
