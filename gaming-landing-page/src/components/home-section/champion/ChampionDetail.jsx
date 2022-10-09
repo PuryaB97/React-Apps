@@ -39,6 +39,7 @@ const ChampionDetail = (props) => {
         <span>
           Role: <span className="second-color">{item.role}</span>
         </span>
+        <br />
         <span>
           Difficulty: <span className="second-color">{item.difficulty}</span>
         </span>
