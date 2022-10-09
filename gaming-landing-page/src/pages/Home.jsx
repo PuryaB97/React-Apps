@@ -4,7 +4,9 @@ import SwiperCore, { EffectFade, Mousewheel, Pagination } from "swiper";
 
 SwiperCore.use([Mousewheel, Pagination, EffectFade]);
 
-import { Welcome, Champion } from "../components/home-section";
+import { Welcome, Champion, ChampionDetail } from "../components/home-section";
+
+import { championsData } from "../assets/dummy";
 
 const swiperOptions = {
   direction: "vertical",
@@ -27,6 +29,9 @@ const Home = () => {
           {({ isActive }) => <Champion isActive={isActive} />}
         </SwiperSlide>
       </Swiper>
+      {championsData.map((item, index) => (
+        <ChampionDetail key={index} item={item} id={index} />
+      ))}
     </>
   );
 };
