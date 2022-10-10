@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 
-import { bg2, trailerImg } from "../../../assets/images";
+import { bg3, trailerImg } from "../../../assets/images";
 import HomeSection from "../HomeSection";
 
 import "./trailer.scss";
@@ -17,7 +17,7 @@ const Trailer = (props) => {
     <HomeSection
       className={`trailer ${props.isActive ? "active" : ""}`}
       contentClassName="overlay trailer__content"
-      bgImage={bg2}
+      bgImage={bg3}
     >
       <div className="trailer__content__img">
         <img src={trailerImg} alt="" />
