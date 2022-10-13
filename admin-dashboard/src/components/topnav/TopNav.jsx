@@ -7,7 +7,7 @@ const TopNav = () => {
     <div className="topnav">
       <div className="topnav__search">
         <input type="text" placeholder="Search here..." />
-        <i class="bx bxs-virus-block"></i>
+        <i class="bx bx-search"></i>
       </div>
       <div className="topnav__right">
         <div className="topnav__right-item">{/* {dropsdown here} */}</div>
