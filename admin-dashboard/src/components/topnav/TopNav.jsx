@@ -2,6 +2,8 @@ import React from "react";
 
 import "./topnav.css";
 
+import { Link } from "react-router-dom";
+
 import Dropdown from "../dropdown/Dropdown";
 
 import notifications from "../../assets/JsonData/notification.json";
@@ -31,6 +33,7 @@ const TopNav = () => {
             badge="12"
             contentData={notifications}
             renderItems={(item, index) => renderNotificationItem(item, index)}
+            renderFooter={() => <Link to="/">View All</Link>}
           />
 
           {/* {dropsdown here} */}

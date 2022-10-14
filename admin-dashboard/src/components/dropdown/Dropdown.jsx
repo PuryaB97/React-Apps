@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import "./dropdown.css";
 
 const Dropdown = (props) => {
+  const dropdown_toggle_el = useRef(null);
+  const dropdown_content_el = useRef(null);
+
   return (
     <div className="dropdown">
-      <button className="dropdown__toggle">
+      <button ref={dropdown_toggle_el} className="dropdown__toggle">
         {props.icon ? <i className={props.icon}></i> : ""}
         {props.badge ? (
           <span className="dropdown__toggle-badge">{props.badge}</span>
@@ -14,7 +17,7 @@ const Dropdown = (props) => {
         )}
         {props.customToggle ? props.customToggle() : ""}
       </button>
-      <div className="dropdown__content">
+      <div ref={dropdown_content_el} className="dropdown__content">
         {props.contentData && props.renderItems
           ? props.contentData.map((item, index) =>
               props.renderItems(item, index)
