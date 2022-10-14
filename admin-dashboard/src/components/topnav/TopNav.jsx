@@ -33,6 +33,15 @@ const renderUserToggle = (user) => (
   </div>
 );
 
+const renderUserMenu = (item, index) => (
+  <Link to="/" key={index}>
+    <div className="notification-item">
+      <i className={item.icon}></i>
+      <span>{item.content}</span>
+    </div>
+  </Link>
+);
+
 const TopNav = () => {
   return (
     <div className="topnav">
@@ -43,7 +52,11 @@ const TopNav = () => {
       <div className="topnav__right">
         <div className="topnav__right-item">
           {/* {dropsdown here} */}
-          <Dropdown customToggle={() => renderUserToggle(curr_user)} />
+          <Dropdown
+            customToggle={() => renderUserToggle(curr_user)}
+            contentData={user_menu}
+            renderItems={(item, index) => renderUserMenu(item, index)}
+          />
         </div>
         <div className="topnav__right-item">
           <Dropdown
