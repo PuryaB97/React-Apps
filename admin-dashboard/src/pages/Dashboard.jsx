@@ -1,5 +1,7 @@
 import React from "react";
 
+import StatusCard from "../components/status-card/StatusCard";
+
 import statusCards from "../assets/JsonData/status-card-data.json";
 
 const Dashboard = () => {
@@ -10,9 +12,18 @@ const Dashboard = () => {
         <div className="col-6">
           <div className="row">
             {statusCards.map((item, index) => (
-              <div className="col-6">{item.title}</div>
+              <div className="col-6">
+                <StatusCard
+                  icon={item.icon}
+                  count={item.count}
+                  title={item.title}
+                />
+              </div>
             ))}
           </div>
+        </div>
+        <div className="col-6">
+          <div className="card full-height"></div>
         </div>
       </div>
     </div>
