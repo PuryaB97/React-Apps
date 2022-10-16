@@ -2,8 +2,8 @@ import React from "react";
 
 import "./bade.css";
 
-const Badge = () => {
-  return <div>Badge</div>;
+const Badge = (props) => {
+  return <span className={`badge badge-${props.type}`}>{props.content}</span>;
 };
 
 export default Badge;
