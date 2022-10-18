@@ -1,6 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 import "./thememenu.css";
+
+import { useDispatch } from "react-redux";
+
+import ThemeAction from "../../redux/actions/ThemeAction";
 
 const mode_settings = [
   {
@@ -52,9 +56,11 @@ const color_settings = [
 
 const clickOutsideRef = (content_ref, toggle_ref) => {
   document.addEventListener("mousedown", (e) => {
+    // user click toggle
     if (toggle_ref.current && toggle_ref.current.contains(e.target)) {
       content_ref.current.classList.toggle("active");
     } else {
+      // user click outside toggle and content
       if (content_ref.current && !content_ref.current.contains(e.target)) {
         content_ref.current.classList.remove("active");
       }
@@ -69,20 +75,25 @@ const ThemeMenu = () => {
   clickOutsideRef(menu_ref, menu_toggle_ref);
 
   const setActiveMenu = () => menu_ref.current.classList.add("active");
+
   const closeMenu = () => menu_ref.current.classList.remove("active");
 
-  const [currMode, setCurrMode] = useState("light");
+  const [currMode, setcurrMode] = useState("light");
 
-  const [currColor, setCurrColor] = useState("blue");
+  const [currColor, setcurrColor] = useState("blue");
+
+  const dispatch = useDispatch();
 
   const setMode = (mode) => {
-    setCurrMode(mode.id);
+    setcurrMode(mode.id);
     localStorage.setItem("themeMode", mode.class);
+    dispatch(ThemeAction.setMode(mode.class));
   };
 
   const setColor = (color) => {
-    setCurrColor(color.id);
+    setcurrColor(color.id);
     localStorage.setItem("colorMode", color.class);
+    dispatch(ThemeAction.setColor(color.class));
   };
 
   useEffect(() => {
@@ -94,9 +105,9 @@ const ThemeMenu = () => {
       (e) => e.class === localStorage.getItem("colorMode", "theme-mode-light")
     );
 
-    if (themeClass !== undefined) setCurrMode(themeClass.id);
+    if (themeClass !== undefined) setcurrMode(themeClass.id);
 
-    if (colorClass !== undefined) setCurrColor(colorClass.id);
+    if (colorClass !== undefined) setcurrColor(colorClass.id);
   }, []);
 
   return (
