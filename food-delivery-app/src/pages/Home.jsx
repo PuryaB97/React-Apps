@@ -16,6 +16,12 @@ import featureImg01 from "../assets/images/service-01.png";
 import featureImg02 from "../assets/images/service-02.png";
 import featureImg03 from "../assets/images/service-03.png";
 
+import products from "../assets/fake-data/products";
+
+import foodCategoryImg01 from "../assets/images/hamburger.png";
+import foodCategoryImg02 from "../assets/images/pizza.png";
+import foodCategoryImg03 from "../assets/images/bread.png";
+
 const featureData = [
   {
     title: "Quick Delivery",
@@ -126,6 +132,34 @@ const Home = () => {
                 </div>
               </Col>
             ))}
+          </Row>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center">
+              <h2>Popular Foods</h2>
+            </Col>
+
+            <Col lg="12">
+              <div className="food__category">
+                <button className="all__btn">All</button>
+                <button>
+                  <img src={foodCategoryImg01} alt="" />
+                  Burger
+                </button>
+                <button>
+                  <img src={foodCategoryImg02} alt="" />
+                  Pizza
+                </button>
+                <button>
+                  <img src={foodCategoryImg03} alt="" />
+                  Bread
+                </button>
+              </div>
+            </Col>
           </Row>
         </Container>
       </section>
