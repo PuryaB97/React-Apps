@@ -13,3 +13,30 @@
 .feature__item p {
   color: #777;
 }
+
+.food__category {
+  background: #df2020;
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px 0px;
+  border-radius: 8px;
+}
+
+.food__category button {
+  border: none;
+  outline: none;
+  padding: 7px 20px;
+  background: transparent;
+  color: #fff;
+}
+
+.food__category button img {
+  width: 20px;
+  height: 20px;
+}
+
+.foodBtnActive {
+  background: #fff !important;
+  border-radius: 5px;
+  color: #df2020 !important;
+}

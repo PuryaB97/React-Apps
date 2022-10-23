@@ -22,6 +22,8 @@ import foodCategoryImg01 from "../assets/images/hamburger.png";
 import foodCategoryImg02 from "../assets/images/pizza.png";
 import foodCategoryImg03 from "../assets/images/bread.png";
 
+import ProductCart from "../components/UI/procust-card/ProductCart";
+
 const featureData = [
   {
     title: "Quick Delivery",
@@ -144,17 +146,17 @@ const Home = () => {
             </Col>
 
             <Col lg="12">
-              <div className="food__category">
-                <button className="all__btn">All</button>
-                <button>
+              <div className="food__category d-flex align-items-center justify-content-center gap-5">
+                <button className="all__btn foodBtnActive">All</button>
+                <button className="d-flex align-items-center gap-2">
                   <img src={foodCategoryImg01} alt="" />
                   Burger
                 </button>
-                <button>
+                <button className="d-flex align-items-center gap-2">
                   <img src={foodCategoryImg02} alt="" />
                   Pizza
                 </button>
-                <button>
+                <button className="d-flex align-items-center gap-2">
                   <img src={foodCategoryImg03} alt="" />
                   Bread
                 </button>
