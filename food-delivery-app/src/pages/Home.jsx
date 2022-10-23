@@ -67,7 +67,7 @@ const Home = () => {
       </section>
 
       <section>
-        <Category />
+        <Category className="pt-0" />
       </section>
     </Helmet>
   );
