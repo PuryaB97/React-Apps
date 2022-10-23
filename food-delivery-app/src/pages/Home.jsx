@@ -8,6 +8,8 @@ import heroImg from "../assets/images/hero.png";
 import "../styles/hero-section.css";
 import { Link } from "react-router-dom";
 
+import Category from "../components/UI/category/Category";
+
 const Home = () => {
   return (
     <Helmet title="Home">
@@ -62,6 +64,10 @@ const Home = () => {
             </Col>
           </Row>
         </Container>
+      </section>
+
+      <section>
+        <Category />
       </section>
     </Helmet>
   );
