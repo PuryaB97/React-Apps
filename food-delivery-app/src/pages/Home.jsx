@@ -22,7 +22,7 @@ import foodCategoryImg01 from "../assets/images/hamburger.png";
 import foodCategoryImg02 from "../assets/images/pizza.png";
 import foodCategoryImg03 from "../assets/images/bread.png";
 
-import ProductCart from "../components/UI/procust-card/ProductCart";
+import ProductCart from "../components/UI/product-card/ProductCart";
 
 const featureData = [
   {
@@ -162,6 +162,12 @@ const Home = () => {
                 </button>
               </div>
             </Col>
+
+            {products.map((item) => (
+              <Col lg="3" md="4" key={item.id} className="mt-5">
+                <ProductCart item={item} />
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
