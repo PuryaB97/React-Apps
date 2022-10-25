@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import Helmet from "../components/Helmet/Helmet";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 
 import heroImg from "../assets/images/hero.png";
 
@@ -23,6 +23,8 @@ import foodCategoryImg02 from "../assets/images/pizza.png";
 import foodCategoryImg03 from "../assets/images/bread.png";
 
 import ProductCart from "../components/UI/product-card/ProductCart";
+
+import whyImg from "../assets/images/location.png";
 
 const featureData = [
   {
@@ -223,6 +225,65 @@ const Home = () => {
                 <ProductCart item={item} />
               </Col>
             ))}
+          </Row>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="6" md="6">
+              <img src={whyImg} alt="why-tasty-treat" className="w-100" />
+            </Col>
+
+            <Col lg="6" md="6">
+              <div className="why__tasty-treat">
+                <h2 className="tasty__treat-title">
+                  Why <span>Tasy Treat?</span>
+                </h2>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Eaque, minima, perspiciatis esse molestias autem aperiam
+                  doloremque, a distinctio animi id dolor expedita alias
+                  incidunt sunt quis consequatur tempora modi blanditiis?
+                </p>
+
+                <ListGroup>
+                  <ListGroupItem>
+                    <p className="d-flex align-items-center gap-2">
+                      <i className="ri-checkbox-circle-line"></i>
+                      Fresh and tasty foods
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Maiores, explicabo.
+                    </p>
+                  </ListGroupItem>
+
+                  <ListGroupItem>
+                    <p className="d-flex align-items-center gap-2">
+                      <i className="ri-checkbox-circle-line"></i>
+                      Quality support
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Maiores, explicabo.
+                    </p>
+                  </ListGroupItem>
+
+                  <ListGroupItem>
+                    <p className="d-flex align-items-center gap-2">
+                      <i className="ri-checkbox-circle-line"></i>
+                      Order from any location
+                    </p>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Maiores, explicabo.
+                    </p>
+                  </ListGroupItem>
+                </ListGroup>
+              </div>
+            </Col>
           </Row>
         </Container>
       </section>
