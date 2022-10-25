@@ -238,45 +238,45 @@ const Home = () => {
 
             <Col lg="6" md="6">
               <div className="why__tasty-treat">
-                <h2 className="tasty__treat-title">
+                <h2 className="tasty__treat-title mb-4">
                   Why <span>Tasy Treat?</span>
                 </h2>
-                <p>
+                <p className="tasty__tread-desc">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                   Eaque, minima, perspiciatis esse molestias autem aperiam
                   doloremque, a distinctio animi id dolor expedita alias
                   incidunt sunt quis consequatur tempora modi blanditiis?
                 </p>
 
-                <ListGroup>
-                  <ListGroupItem>
-                    <p className="d-flex align-items-center gap-2">
+                <ListGroup className="mt-5">
+                  <ListGroupItem className="border-0 ps-0">
+                    <p className="choose__us-title d-flex align-items-center gap-2">
                       <i className="ri-checkbox-circle-line"></i>
                       Fresh and tasty foods
                     </p>
-                    <p>
+                    <p className="choose__us-desc">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Maiores, explicabo.
                     </p>
                   </ListGroupItem>
 
-                  <ListGroupItem>
-                    <p className="d-flex align-items-center gap-2">
+                  <ListGroupItem className="border-0 ps-0">
+                    <p className="choose__us-title d-flex align-items-center gap-2">
                       <i className="ri-checkbox-circle-line"></i>
                       Quality support
                     </p>
-                    <p>
+                    <p className="choose__us-desc">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Maiores, explicabo.
                     </p>
                   </ListGroupItem>
 
-                  <ListGroupItem>
-                    <p className="d-flex align-items-center gap-2">
+                  <ListGroupItem className="border-0 ps-0">
+                    <p className="choose__us-title d-flex align-items-center gap-2">
                       <i className="ri-checkbox-circle-line"></i>
                       Order from any location
                     </p>
-                    <p>
+                    <p className="choose__us-desc">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Maiores, explicabo.
                     </p>

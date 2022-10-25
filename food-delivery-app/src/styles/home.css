@@ -40,3 +40,26 @@
   border-radius: 5px;
   color: #df2020 !important;
 }
+
+.tasty__treat-title span {
+  color: #df2020;
+}
+
+.tasty__tread-desc {
+  color: #777;
+  line-height: 28px;
+}
+
+.choose__us-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.choose__us-title i {
+  font-weight: 500 !important;
+  color: #df2020;
+}
+
+.choose__us-desc {
+  color: #777;
+}
