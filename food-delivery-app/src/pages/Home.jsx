@@ -48,6 +48,14 @@ const Home = () => {
   const [category, setCategory] = useState("ALL");
   const [allProducts, setAllProducts] = useState(products);
 
+  const [hotPizza, setHotPizza] = useState([]);
+
+  useEffect(() => {
+    const filteredPizza = products.filter((item) => item.category === "Pizza");
+    const slicePizza = filteredPizza.slice(0, 4);
+    setHotPizza(slicePizza);
+  }, []);
+
   useEffect(() => {
     if (category === "ALL") {
       setAllProducts(products);
@@ -284,6 +292,22 @@ const Home = () => {
                 </ListGroup>
               </div>
             </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="pt-0">
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center mb-5">
+              <h2>Hot Pizza</h2>
+            </Col>
+
+            {hotPizza.map((item) => (
+              <Col lg="3" md="4" key={item.id}>
+                <ProductCart item={item} />
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
