@@ -26,6 +26,8 @@ import ProductCart from "../components/UI/product-card/ProductCart";
 
 import whyImg from "../assets/images/location.png";
 
+import networkImg from "../assets/images/network.png";
+
 const featureData = [
   {
     title: "Quick Delivery",
@@ -308,6 +310,30 @@ const Home = () => {
                 <ProductCart item={item} />
               </Col>
             ))}
+          </Row>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="6" md="6">
+              <div className="testimonial">
+                <h5 className="testimonial__subtitle mb-4">Testimonial</h5>
+                <h2 className="testimonial__title mb-4">
+                  What our <span>customer</span> are saying
+                </h2>
+                <p className="testimonial__desc">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Eveniet voluptas quisquam, commodi quam numquam ex fuga
+                  temporibus error nemo optio!
+                </p>
+              </div>
+            </Col>
+
+            <Col lg="6" md="6">
+              <img src={networkImg} alt="testimonial-img" className="w-100" />
+            </Col>
           </Row>
         </Container>
       </section>
