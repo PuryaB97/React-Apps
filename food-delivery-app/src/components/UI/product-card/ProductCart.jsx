@@ -2,10 +2,25 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../store/shopping-cart/cartSlice";
+
 import "../../../styles/product-card.css";
 
 const ProductCart = (props) => {
   const { id, title, image01, price } = props.item;
+  const dispatch = useDispatch();
+
+  const addToCart = () => {
+    dispatch(
+      cartActions.addItem({
+        id,
+        title,
+        image01,
+        price,
+      })
+    );
+  };
 
   return (
     <div className="product__item">
@@ -19,7 +34,9 @@ const ProductCart = (props) => {
         </h5>
         <div className="d-flex align-items-center justify-content-between">
           <span className="product__price">${price}</span>
-          <button className="addToCart__btn">Add to Cart</button>
+          <button className="addToCart__btn" onClick={addToCart}>
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
