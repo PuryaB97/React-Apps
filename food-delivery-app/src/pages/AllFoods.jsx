@@ -6,12 +6,25 @@ import { Container, Row, Col } from "reactstrap";
 
 import products from "../assets/fake-data/products";
 import ProductCard from "../components/UI/product-card/ProductCart";
+import ReactPaginate from "react-paginate";
 
 import "../styles/all-foods.css";
+import "../styles/pagination.css";
 
 const AllFoods = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [productData, setProductData] = useState(products);
+
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const productPerPage = 8;
+  const visitedPage = pageNumber * productPerPage;
+  const displayPage = products.slice(visitedPage, visitedPage + productPerPage);
+
+  const pageCount = Math.ceil(products.length / productPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   return (
     <Helmet title="All Foods">
@@ -45,7 +58,7 @@ const AllFoods = () => {
               </div>
             </Col>
 
-            {productData
+            {displayPage
               .filter((item) => {
                 if (searchTerm.value === "") return item;
                 if (item.title.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -56,6 +69,16 @@ const AllFoods = () => {
                   <ProductCard item={item} key={item.id} className="mb-4" />
                 </Col>
               ))}
+
+            <div>
+              <ReactPaginate
+                pageCount={pageCount}
+                onPageChange={changePage}
+                previousLabel="Prev"
+                nextLabel="Next"
+                containerClassName="paginationBtns"
+              />
+            </div>
           </Row>
         </Container>
       </section>
