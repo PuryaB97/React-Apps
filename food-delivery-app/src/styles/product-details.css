@@ -1,0 +1,29 @@
+.single__product-content {
+  padding-left: 50px;
+}
+
+.product__price {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  margin-bottom: 0;
+}
+.product__price span {
+  font-size: 2rem;
+}
+
+.category {
+  font-weight: 600;
+  color: #212245;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  margin-top: 10px;
+}
+
+.category span {
+  padding: 5px 10px;
+  background: #fde4e4;
+  color: #212245;
+  border-radius: 5px;
+}
