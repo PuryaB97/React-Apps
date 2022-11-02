@@ -27,3 +27,24 @@
   color: #212245;
   border-radius: 5px;
 }
+
+.tabs {
+  border-bottom: 1px solid #fde4e4;
+}
+
+.tabs h6 {
+  cursor: pointer;
+}
+
+.tab__content {
+  padding: 30px 0px;
+}
+
+.tab__content p {
+  line-height: 30px;
+  color: #212245b6;
+}
+
+.tab__active {
+  color: #df2020;
+}

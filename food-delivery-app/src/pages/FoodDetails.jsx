@@ -51,6 +51,25 @@ const FoodDetails = () => {
                 <button className="addToCart__btn">Add to Cart</button>
               </div>
             </Col>
+
+            <Col lg="12">
+              <div className="tabs d-flex align-items-center gap-3 py-2">
+                <h6>Description</h6>
+                <h6>Review</h6>
+              </div>
+
+              <div className="tab__content">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Culpa aperiam magnam corrupti illo autem? Laudantium, ratione,
+                  exercitationem doloribus eaque molestias aliquam ipsum ut
+                  velit cum ad provident. Culpa recusandae saepe tempore qui a
+                  odio facilis facere. Laboriosam itaque natus tenetur fugiat
+                  ratione a cumque voluptates id non? Sequi, recusandae
+                  excepturi.
+                </p>
+              </div>
+            </Col>
           </Row>
         </Container>
       </section>
