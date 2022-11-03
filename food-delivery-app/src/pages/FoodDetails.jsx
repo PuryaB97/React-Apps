@@ -69,6 +69,30 @@ const FoodDetails = () => {
                   excepturi.
                 </p>
               </div>
+
+              <div className="tab__form">
+                <div className="form">
+                  <div className="form__group">
+                    <input type="text" placeholder="Enter your name" />
+                  </div>
+
+                  <div className="form__group">
+                    <input type="text" placeholder="Enter your name" />
+                  </div>
+
+                  <div className="form__group">
+                    <textarea
+                      rows={5}
+                      type="type"
+                      placeholder="Enter your message"
+                    />
+                  </div>
+
+                  <button type="submit" className="addToCart__btn">
+                    Submit
+                  </button>
+                </div>
+              </div>
             </Col>
           </Row>
         </Container>
