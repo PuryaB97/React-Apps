@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import products from "../assets/fake-data/products";
 import { useParams } from "react-router-dom";
@@ -11,6 +11,14 @@ import "../styles/product-details.css";
 import productImg from "../assets/images/product_01.1.jpg";
 
 const FoodDetails = () => {
+  const [tab, setTap] = useState("desc");
+
+  const { id } = useParams();
+
+  const product = products.find((product) => product.id === id);
+
+  const [previewImg, setPreviewImg] = useState(product.image01);
+
   return (
     <Helmet title="Product-details">
       <CommonSection title="prodcuts 01" />
@@ -70,7 +78,25 @@ const FoodDetails = () => {
                 </p>
               </div>
 
-              <div className="tab__form">
+              <div className="tab__form mb-3">
+                <div className="review">
+                  <p className="user__name mb-0">Jhon Doe</p>
+                  <p className="user__email">example@mail.com</p>
+                  <p className="feedback__text">great product</p>
+                </div>
+
+                <div className="review">
+                  <p className="user__name mb-0">Jhon Doe</p>
+                  <p className="user__email">example@mail.com</p>
+                  <p className="feedback__text">great product</p>
+                </div>
+
+                <div className="review">
+                  <p className="user__name mb-0">Jhon Doe</p>
+                  <p className="user__email">example@mail.com</p>
+                  <p className="feedback__text">great product</p>
+                </div>
+
                 <div className="form">
                   <div className="form__group">
                     <input type="text" placeholder="Enter your name" />

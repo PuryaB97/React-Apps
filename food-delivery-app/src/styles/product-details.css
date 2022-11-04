@@ -73,3 +73,23 @@
 .form__group textarea:focus {
   outline: none;
 }
+
+.user__name {
+  font-weight: 600;
+  color: #212245;
+}
+
+.user__email {
+  font-size: 0.8rem;
+}
+
+.feedback__text {
+  color: #212245b6;
+}
+
+.img__item {
+  cursor: pointer;
+}
+.related__Product-title {
+  font-size: 1.4rem;
+}
