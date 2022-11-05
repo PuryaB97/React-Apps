@@ -93,3 +93,57 @@
 .related__Product-title {
   font-size: 1.4rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .product__title {
+    font-size: 1.2rem;
+  }
+  .product__price,
+  .product__price span {
+    font-size: 1rem;
+  }
+  .category,
+  .category span {
+    font-size: 0.8rem !important;
+  }
+
+  .tabs {
+    margin-top: 30px;
+  }
+  .tabs h6 {
+    font-size: 0.9rem;
+  }
+
+  .tab__content p,
+  .user__name,
+  .feedback__text {
+    font-size: 0.8rem;
+  }
+  .user__email {
+    font-size: 0.7rem;
+  }
+
+  .form {
+    width: 100% !important;
+    margin-top: 50px;
+  }
+
+  .form__group input::placeholder,
+  .form__group textarea::placeholder {
+    font-size: 0.8rem;
+  }
+  .related__Product-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .product__images {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .product__main-img {
+    margin-bottom: 20px;
+  }
+}
