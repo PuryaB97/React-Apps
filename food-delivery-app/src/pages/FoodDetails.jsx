@@ -8,7 +8,7 @@ import { Container, Row, Col } from "reactstrap";
 
 import "../styles/product-details.css";
 
-import productImg from "../assets/images/product_01.1.jpg";
+import ProductCard from "../components/UI/product-card/ProductCart";
 
 const FoodDetails = () => {
   const [tab, setTap] = useState("desc");
@@ -20,6 +20,16 @@ const FoodDetails = () => {
   const [previewImg, setPreviewImg] = useState(product.image01);
 
   const { title, price, category, desc } = product;
+
+  const relatedProducts = products.filter((item) => category === item.category);
+
+  useEffect(() => {
+    setPreviewImg(product.image01);
+  }, [product]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [product]);
 
   return (
     <Helmet title="Product-details">
@@ -53,7 +63,7 @@ const FoodDetails = () => {
 
             <Col lg="4" md="4">
               <div className="product__main-img">
-                <img src={productImg} alt="" className="w-100" />
+                <img src={previewImg} alt="" className="w-100" />
               </div>
             </Col>
 
@@ -135,6 +145,16 @@ const FoodDetails = () => {
                 </div>
               )}
             </Col>
+
+            <Col lg="12" className="mb-5 mt-4">
+              <h2 className="related__Product-title">You might also like</h2>
+            </Col>
+
+            {relatedProducts.map((item) => (
+              <Col lg="3" md="4" sm="6" sx="6" className="mb-4" key={item.id}>
+                <ProductCard item={item} />
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
