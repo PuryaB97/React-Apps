@@ -13,3 +13,12 @@ th {
 .cart__item-del i {
   cursor: pointer;
 }
+
+.cart__page-btn button a:hover {
+  color: white;
+}
+
+.cart__subtotal {
+  color: #df2020;
+  font-size: 1.5rem;
+}

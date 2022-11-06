@@ -3,13 +3,15 @@ import React from "react";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
 import "../styles/cart-page.css";
+import { Link } from "react-router-dom";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
 import { cartActions } from "../components/store/shopping-cart/cartSlice";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
 
   return (
     <Helmet title="Cart">
@@ -39,6 +41,22 @@ const Cart = () => {
                   </tbody>
                 </table>
               )}
+
+              <div>
+                <h6>
+                  Subtotal: $
+                  <span className="cart__subtotal">{totalAmount}</span>
+                </h6>
+                <p>Taxes and shipping will calculate at checkout</p>
+                <div className="cart__page-btn">
+                  <button className="addToCart__btn me-4">
+                    <Link to="/foods">Continue Shopping</Link>
+                  </button>
+                  <button className="addToCart__btn">
+                    <Link to="/checkout">Proceed to checkout</Link>
+                  </button>
+                </div>
+              </div>
             </Col>
           </Row>
         </Container>
@@ -48,7 +66,12 @@ const Cart = () => {
 };
 
 const Tr = (props) => {
-  const { image01, title, price, quantity } = props.item;
+  const { id, image01, title, price, quantity } = props.item;
+  const dispatch = useDispatch();
+
+  const deleteItem = () => {
+    dispatch(cartActions.deleteItem(id));
+  };
 
   return (
     <tr>
@@ -58,7 +81,7 @@ const Tr = (props) => {
       <td className="text-center">{title}</td>
       <td className="text-center">${price}</td>
       <td className="text-center">{quantity}px</td>
-      <td className="text-center cart__item-del">
+      <td className="text-center cart__item-del" onClick={deleteItem}>
         <i className="ri-delete-bin-5-line"></i>
       </td>
     </tr>
