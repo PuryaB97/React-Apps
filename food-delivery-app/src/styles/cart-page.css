@@ -1,0 +1,15 @@
+th {
+  text-align: center;
+}
+
+.cart__img-box {
+  width: 80px;
+}
+
+.cart__img-box img {
+  width: 100%;
+}
+
+.cart__item-del i {
+  cursor: pointer;
+}
