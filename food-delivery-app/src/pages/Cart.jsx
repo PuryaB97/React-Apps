@@ -42,7 +42,7 @@ const Cart = () => {
                 </table>
               )}
 
-              <div>
+              <div className="mt-4">
                 <h6>
                   Subtotal: $
                   <span className="cart__subtotal">{totalAmount}</span>
