@@ -36,7 +36,7 @@ const Login = () => {
                     ref={loginPasswordRef}
                   />
                 </div>
-                <button type="submit" className="addTOCart__btn">
+                <button type="submit" className="addToCart__btn">
                   Login
                 </button>
               </form>
